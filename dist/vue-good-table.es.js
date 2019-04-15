@@ -909,6 +909,9 @@ var VueGoodTable = {render: function(){var _vm=this;var _h=_vm.$createElement;va
         };
       },
     },
+    //
+    thisPage:{default:1,type:Number}
+
   },
 
   data: () => ({
@@ -1018,6 +1021,12 @@ var VueGoodTable = {render: function(){var _vm=this;var _h=_vm.$createElement;va
           selectedRows: this.selectedRows,
         });
       }
+    },
+      //change page when content change
+    thisPage(page){
+        if(this.mode === 'remote' && page != this.currentPage){
+            this.changePage(page);
+        }
     },
   },
 

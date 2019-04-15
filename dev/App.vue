@@ -5,6 +5,7 @@
     <button @click="resetTable">reset Table</button>
     <button @click="hideColumn">hide column</button>
     <button @click="setFilter">SetFilter</button>
+    <button @click="thisPage=1">setPage1</button>
     <input type="text" v-model="searchTerm">
     <vue-good-table
       ref="my-table"
@@ -17,6 +18,7 @@
       @on-selected-rows-change="onSelectChanged"
       :columns="columns"
       :rows="rows"
+      :thisPage="thisPage"
       theme="black-rhino"
       :pagination-options="{
         mode: 'pages',
@@ -53,6 +55,7 @@ export default {
       selectedIds: [],
       rowStyleClass: 'red',
       searchTerm: '',
+      thisPage:2,
       columns: [
         {
           label: 'Name',

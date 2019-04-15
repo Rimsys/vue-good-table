@@ -361,6 +361,9 @@ export default {
         };
       },
     },
+    //
+    thisPage:{default:1,type:Number}
+
   },
 
   data: () => ({
@@ -470,6 +473,12 @@ export default {
           selectedRows: this.selectedRows,
         });
       }
+    },
+      //change page when content change
+    thisPage(page){
+        if(this.mode === 'remote' && page != this.currentPage){
+            this.changePage(page);
+        }
     },
   },
 
